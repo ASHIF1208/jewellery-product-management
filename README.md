@@ -1,61 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Jewellery Product Management
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Description
+This is a Jewellery Product Management application built using PHP and Laravel. The application aims to provide a comprehensive system for managing jewellery products, including product listing, inventory management, categorization, pricing, order tracking, and sales analytics. It is designed to streamline the operations of jewellery stores by offering an intuitive interface for both customers and administrators.
 
-## About Laravel
+## Features
+- Product categorization
+- Inventory tracking with stock management
+- Supplier management (Note: Supplier management is not currently implemented)
+- Pricing and discount management
+- Order and sales tracking
+- Reports and analytics (basic dashboard features)
+- User authentication and profile management
+- Shopping cart and wishlist functionality
+- Admin dashboard for product and order management
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Requirements
+- PHP 8.2 or higher
+- Composer
+- Laravel Framework 12.x
+- A supported database (e.g., MySQL, PostgreSQL, SQLite)
+- Node.js and npm (for frontend assets)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd jewellery_management
+   ```
 
-## Learning Laravel
+2. Install PHP dependencies using Composer:
+   ```bash
+   composer install
+   ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. Copy the example environment file and configure your environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+   Update `.env` with your database credentials and other necessary configurations.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+4. Generate the application key:
+   ```bash
+   php artisan key:generate
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+5. Run database migrations and seeders:
+   ```bash
+   php artisan migrate --seed
+   ```
 
-## Laravel Sponsors
+6. Install frontend dependencies and build assets:
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+7. Start the development server:
+   ```bash
+   php artisan serve
+   ```
 
-### Premium Partners
+8. Access the application at `http://localhost:8000`.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+## Usage
+
+### Product Management
+- Admin users can add, edit, and delete products via the admin dashboard.
+- Products can be categorized and assigned stock quantities.
+- Product images can be uploaded and managed.
+
+### Inventory Management
+- Stock levels are tracked for each product.
+- Admins can update stock quantities when adding or editing products.
+
+### Order Management
+- Customers can add products to their cart and place orders.
+- Orders include shipping and billing information, payment method, and order status.
+- Users can view their order history and details.
+
+### Reports and Analytics
+- The dashboard provides recent order and wishlist summaries for users.
+- Admin reports and advanced analytics can be extended as needed.
+
+## API Documentation
+
+### Authentication
+- The application uses Laravel Sanctum for API authentication.
+- Authenticated users can access the `/api/user` endpoint to retrieve their user information.
+
+### Endpoints
+- Currently, the API routes are minimal and primarily support user authentication.
+- Future API endpoints can be added to support product, order, and inventory management.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+We welcome contributions to improve the Jewellery Product Management system. Please follow these guidelines:
 
-## Code of Conduct
+- Fork the repository and create your feature branch:
+  ```bash
+  git checkout -b feature/your-feature-name
+  ```
+- Commit your changes with clear messages:
+  ```bash
+  git commit -m "Add feature description"
+  ```
+- Push to your branch:
+  ```bash
+  git push origin feature/your-feature-name
+  ```
+- Submit a pull request describing your changes.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Coding Standards
+- Follow PSR-12 coding standards for PHP.
+- Write clear, maintainable, and well-documented code.
+- Include tests for new features or bug fixes where applicable.
